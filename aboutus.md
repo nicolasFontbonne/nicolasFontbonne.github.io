@@ -5,10 +5,9 @@ subtitle: Who are we and Why are we doing this
 ---
 
 We are :
-    - Jeremy Wanner
-    - Konstantinos Koukas
-    - Nicolas Fontbonne
+* Jeremy Wanner
+* Konstantinos Koukas
+* Nicolas Fontbonne
 
-### my history
 
-And we are ADA student
+And we are ADA student ...
