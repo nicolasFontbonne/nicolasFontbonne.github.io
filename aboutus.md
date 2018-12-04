@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About us
-subtitle: Who are we and Why are we doing this
+subtitle: Who are we and Why are we doing this ?
 ---
 
 We are :
