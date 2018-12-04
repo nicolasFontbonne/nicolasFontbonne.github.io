@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 927 394.699">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fef035;
+      }
+
+      .cls-2, .cls-4, .cls-5 {
+        fill: #444745;
+      }
+
+      .cls-2 {
+        font-size: 241px;
+      }
+
+      .cls-2, .cls-4 {
+        font-family: Times-Roman, Times;
+      }
+
+      .cls-3 {
+        font-size: 200px;
+      }
+
+      .cls-4 {
+        font-size: 88px;
+      }
+
+      .cls-5 {
+        font-size: 185px;
+        font-family: Times-Bold, Times;
+        font-weight: 700;
+      }
+
+      .cls-6 {
+        fill: none;
+        stroke: #444745;
+        stroke-linecap: square;
+        stroke-width: 9px;
+      }
+    </style>
+  </defs>
+  <g id="Logo" transform="translate(-267 -177)">
+    <rect id="Rectangle_1" data-name="Rectangle 1" class="cls-1" width="713.696" height="186" rx="1" transform="translate(480.304 368.699)"/>
+    <text id="YELLOW" class="cls-2" transform="translate(267 358)"><tspan x="0" y="0">Y</tspan><tspan class="cls-3" y="0">ELLOW</tspan></text>
+    <text id="is_the_new" data-name="is
+the
+new" class="cls-4" transform="translate(311 432.699)"><tspan x="0" y="0">is</tspan><tspan x="0" y="57">the</tspan><tspan x="0" y="114">new</tspan></text>
+    <text id="BLACK" class="cls-5" transform="translate(505 525.699)"><tspan x="0" y="0">BLACK</tspan></text>
+    <line id="Ligne_1" data-name="Ligne 1" class="cls-6" y2="297.973" transform="translate(288.667 247.248)"/>
+  </g>
+</svg>
