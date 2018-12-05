@@ -4944,15 +4944,15 @@ a.thumbnail.active {
 .alert-success .alert-link {
   color: #2b542c;
 }
-.info {
+.alert-intro {
   color: #3c763d;
   background-color: #dff0d8;
   border-color: #d6e9c6;
 }
-.info hr {
+.alert-intro  hr {
   border-top-color: #c9e2b3;
 }
-.info .alert-link {
+.alert-intro  .alert-link {
   color: #2b542c;
 }
 .alert-info {
