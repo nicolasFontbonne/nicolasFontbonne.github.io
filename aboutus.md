@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: About us
 subtitle: Who are we and Why are we doing this ?
 ---
