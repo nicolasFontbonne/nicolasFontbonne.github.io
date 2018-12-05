@@ -4945,9 +4945,9 @@ a.thumbnail.active {
 }
 
 .alert-secondary {
-  color: #383d41;
-  background-color: #e2e3e5;
-  border-color: #d6d8db;
+  color: ##444745;
+  background-color: ##F1F3F2;
+  border-color: #F1F3F2;
 }
 
 .alert-secondary hr {
