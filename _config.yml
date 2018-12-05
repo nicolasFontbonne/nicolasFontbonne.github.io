@@ -26,8 +26,9 @@ navbar-links:
   About US: "aboutus"
   Resources:
     - GitHub respository: "https://github.com/nicolasFontbonne/ADA-FakeNews"
-    - Liar Database: "https://www.cs.ucsb.edu/~william/data/liar_dataset.zip"
-    - Original article: "https://www.cs.ucsb.edu/~william/data/liar_dataset.zip"
+    - Original article: "https://arxiv.org/pdf/1705.00648.pdf"
+    - Download the Liar Database: "https://www.cs.ucsb.edu/~william/data/liar_dataset.zip"
+
 
 
 # Image to show in the navigation bar - image must be a square (width = height)
