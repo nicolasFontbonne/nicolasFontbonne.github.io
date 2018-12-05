@@ -127,7 +127,7 @@ img {
 .navbar-custom .navbar-brand,
 .navbar-custom .nav li a {
   font-weight: 800;
-  font-size: 8px;
+  font-size: 12px;
   color: {{ site.navbar-text-col }};
 }
 
