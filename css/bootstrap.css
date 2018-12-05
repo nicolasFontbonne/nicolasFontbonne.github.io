@@ -4945,13 +4945,13 @@ a.thumbnail.active {
 }
 
 .alert-secondary {
-  color: ##444745;
-  background-color: ##F1F3F2;
-  border-color: #F1F3F2;
+  color: #444745;
+  background-color: ##f1f3f2;
+  border-color: #f1f3f2;
 }
 
 .alert-secondary hr {
-  border-top-color: #c8cbcf;
+  border-top-color: #444745;
 }
 
 .alert-secondary .alert-link {
