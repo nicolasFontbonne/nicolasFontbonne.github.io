@@ -4946,7 +4946,7 @@ a.thumbnail.active {
 }
 .alert-intro {
   color: #444745;
-  background-color: #F1F3F2;
+  background-color: #f1f3f2;
   border-color: #F0F2F1;
 }
 .alert-intro  hr {
@@ -4956,15 +4956,15 @@ a.thumbnail.active {
   color: #2b542c;
 }
 .alert-info {
-  color: #31708f;
-  background-color: #d9edf7;
+  color: #444745;
+  background-color: #f1f3f2;
   border-color: #bce8f1;
 }
 .alert-info hr {
   border-top-color: #a6e1ec;
 }
 .alert-info .alert-link {
-  color: #245269;
+  color: #444745;
 }
 .alert-warning {
   color: #8a6d3b;
