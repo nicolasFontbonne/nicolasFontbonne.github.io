@@ -30,7 +30,7 @@ a {
 }
 a:hover,
 a:focus {
-  background-color: {{ site.hover-col }};
+  color: {{ site.hover-col }};
 
 }
 blockquote {
