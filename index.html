@@ -101,11 +101,12 @@ else if (color == "orange") {
 strokecolor = colorrange[0];
 
 var format = d3.time.format("%m/%d/%y");
-
-var margin = {top: 20, right: 40, bottom: 30, left: 30};
-var width = document.body.clientWidth - margin.left - margin.right;
-console.log($("#typehead").parent().width());
-var height = 400 - margin.top - margin.bottom;
+var	margin = {top: 30, right: 20, bottom: 30, left: 50},
+	width = 800 - margin.left - margin.right,
+	height = 400 - margin.top - margin.bottom;
+//var margin = {top: 20, right: 40, bottom: 30, left: 30};
+//var width = document.body.clientWidth - margin.left - margin.right;
+//var height = 400 - margin.top - margin.bottom;
 
 var tooltip = d3.select("body")
     .append("div")
