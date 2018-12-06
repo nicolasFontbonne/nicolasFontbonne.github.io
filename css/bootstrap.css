@@ -6318,10 +6318,12 @@ button.close {
 }
 .card {
   position: relative;
+  /*
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
-  flex-direction: column;
+  flex-direction: column;*/
+  display: inline-block;
   min-width: 0;
   word-wrap: break-word;
   background-color: #fff;
