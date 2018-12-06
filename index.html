@@ -98,8 +98,8 @@ function chart(csvpath) {
 
 var format = d3.time.format("%m/%d/%y");
 
-var	margin = {top: 30, right: 20, bottom: 30, left: 50},
-    width = document.getElementById('chart').clientWidth,
+var	margin = {top: 30, left: 20, bottom: 30, right: 20},
+    width = document.getElementById('chart').clientWidth- margin.left - margin.right,
 	height = 400 - margin.top - margin.bottom;
     console.log(width);
 //var margin = {top: 20, right: 40, bottom: 30, left: 30};
@@ -116,7 +116,7 @@ var tooltip = d3.select("chart")
     .style("left", "55px");
 
 var x = d3.time.scale()
-    .range([0, width]);
+    .range([margin.left, width]);
 
 var y = d3.scale.linear()
     .range([height-10, 0]);
