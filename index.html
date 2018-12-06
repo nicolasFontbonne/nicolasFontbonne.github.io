@@ -82,6 +82,7 @@ chart("data/test.csv", "orange");
 
 var datearray = [];
 var colorrange = [];
+console.log("HEY");
 
 
 function chart(csvpath, color) {
@@ -197,6 +198,8 @@ var graph = d3.csv(csvpath, function(data) {
     })})
 
     .on("mousemove", function(d, i) {
+        console.log("mousemove");
+
       mousex = d3.mouse(this);
       mousex = mousex[0];
       var invertedx = x.invert(mousex);
@@ -238,6 +241,8 @@ var graph = d3.csv(csvpath, function(data) {
         .style("bottom", "30px")
         .style("left", "0px")
         .style("background", "#fff");
+    console.log("Yes");
+
 
   d3.select(".chart")
       .on("mousemove", function(){
@@ -248,6 +253,9 @@ var graph = d3.csv(csvpath, function(data) {
          mousex = d3.mouse(this);
          mousex = mousex[0] + 5;
          vertical.style("left", mousex + "px")});
+
+         console.log("Hey Oh");
+
 });
 }
 </script>
