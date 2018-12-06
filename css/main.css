@@ -788,7 +788,7 @@ td.gutter {
 
 .axis path, .axis line {
   fill: none;
-  stroke: #000;
+  stroke: #444745;
   stroke-width: 2px;
   shape-rendering: crispEdges;
 }
