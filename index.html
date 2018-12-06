@@ -103,14 +103,14 @@ var	margin = {top: 30, right: 20, bottom: 30, left: 50},
 //var width = document.body.clientWidth - margin.left - margin.right;
 //var height = 400 - margin.top - margin.bottom;
 
-//var tooltip = d3.select("body")
-//    .append("div")
-//    .attr("class", "remove")
-//    .style("position", "absolute")
-//    .style("z-index", "20")
-//    .style("visibility", "hidden")
-//    .style("top", "30px")
-//    .style("left", "55px");
+var tooltip = d3.select(".chart")
+    .append("div")
+    .attr("class", "remove")
+    .style("position", "absolute")
+    .style("z-index", "20")
+    .style("visibility", "hidden")
+    .style("top", "30px")
+    .style("left", "55px");
 
 var x = d3.time.scale()
     .range([0, width]);
