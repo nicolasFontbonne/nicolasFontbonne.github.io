@@ -104,6 +104,7 @@ var format = d3.time.format("%m/%d/%y");
 
 var margin = {top: 20, right: 40, bottom: 30, left: 30};
 var width = document.body.clientWidth - margin.left - margin.right;
+console.log($("#typehead").parent().width());
 var height = 400 - margin.top - margin.bottom;
 
 var tooltip = d3.select("body")
@@ -233,6 +234,7 @@ var graph = d3.csv(csvpath, function(data) {
 
   var vertical = d3.select(".chart")
         .append("div")
+        .attr("class", "remove")
         .style("position", "absolute")
         .style("z-index", "19")
         .style("width", "1px")
@@ -241,7 +243,6 @@ var graph = d3.csv(csvpath, function(data) {
         .style("bottom", "30px")
         .style("left", "0px")
         .style("background", "#fff");
-    console.log("Yes");
 
 
   d3.select(".chart")
@@ -254,7 +255,6 @@ var graph = d3.csv(csvpath, function(data) {
          mousex = mousex[0] + 5;
          vertical.style("left", mousex + "px")});
 
-         console.log("Hey Oh");
 
 });
 }
