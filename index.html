@@ -175,7 +175,6 @@ var graph = d3.csv(csvpath, function(data) {
 
   svg.append("g")
       .attr("class", "x axis")
-      .attr("stroke-width", "2px")
       .attr("transform", "translate(0," + height + ")")
       .call(xAxis);
 
@@ -186,10 +185,8 @@ var graph = d3.csv(csvpath, function(data) {
 
   svg.append("g")
       .attr("class", "y axis")
-      .attr("stroke-width", "0.5px")
       .call(yAxis.orient("left"));
 
-    console.log("HELLO WORLD");
   svg.selectAll(".layer")
     .attr("opacity", 1)
     .on("mouseover", function(d, i) {
