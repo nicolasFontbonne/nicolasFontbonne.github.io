@@ -1,11 +1,11 @@
-var parsedate = d3.utcParse("%Y-%B");
+var parsedate = d3.time.format("%Y-%B");
 
-var canvas = document.querySelector("canvas"),
+var canvas = document.querySelector("#chart"),
     context = canvas.getContext("2d");
 
-var margin = {top: 40, right: 40, bottom: 40, left: 40},
-    width = canvas.width - margin.left - margin.right,
-    height = canvas.height - margin.top - margin.bottom;
+var	margin = {top: 30, left: 20, bottom: 30, right: 20},
+    width = document.getElementById('chart').clientWidth- margin.left - margin.right,
+    height = 400 - margin.top - margin.bottom;
 
 var x = d3.scaleUtc()
     .range([0, width]);
