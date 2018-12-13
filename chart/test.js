@@ -24,7 +24,7 @@ var line = d3.line()
 
 context.translate(margin.left, margin.top);
 
-d3.requestCsv("data.csv", function(d) {
+d3.requestCsv("../data/test.csv", function(d) {
   d.date = parseTime(d.date);
   d.count = +d.count;
   return d;
