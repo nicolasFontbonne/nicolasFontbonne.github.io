@@ -9,7 +9,7 @@ var svg = d3.select("#chart")
     .attr("width", width)
     .attr("height", height);
 
-var parseDate = d3.timeParse("%Y-%B");
+var parseDate = d3.timeParse("%Y-%m");
 
 var x = d3.scaleTime().range([0, width]),
     x2 = d3.scaleTime().range([0, width]),
