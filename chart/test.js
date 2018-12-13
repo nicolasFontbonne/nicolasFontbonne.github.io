@@ -1,13 +1,14 @@
 var	margin = {top: 20, right: 20, bottom: 110, left: 40},
     margin2 = {top: 430, right: 20, bottom: 30, left: 40},
     width = document.getElementById('chart').clientWidth- margin.left - margin.right,
-    height = 400 - margin.top - margin.bottom;
+    height = 400 - margin.top - margin.bottom,
     height2 = 400 - margin2.top - margin2.bottom;
 
 var svg = d3.select("#chart")
     .append("svg")
     .attr("width", width)
-    .attr("height", height)
+    .attr("height", height);
+    
 var parseDate = d3.timeParse("%Y-%B");
 
 var x = d3.scaleTime().range([0, width]),
