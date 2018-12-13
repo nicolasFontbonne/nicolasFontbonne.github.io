@@ -1,171 +1,84 @@
+var parsedate = d3.utcParse("%Y-%B");
 
-chart("data/test.csv", "orange");
+var canvas = document.querySelector("canvas"),
+    context = canvas.getContext("2d");
 
-var datearray = [];
-var colorrange = [];
-console.log("HEY");
+var margin = {top: 40, right: 40, bottom: 40, left: 40},
+    width = canvas.width - margin.left - margin.right,
+    height = canvas.height - margin.top - margin.bottom;
 
+var x = d3.scaleUtc()
+    .range([0, width]);
 
-function chart(csvpath) {
-    console.log("HEY");
+var y = d3.scaleLinear()
+    .range([height, 0]);
 
+var symbol = d3.symbol()
+    .context(context);
 
-    colorrange = ["#B30000", "#E34A33", "#FC8D59", "#FDBB84", "#FDD49E", "#FEF0D9"];
-    colorrange = ["#FEF035", "#FAF171", "#F7F194", "#F5F2B3", "#F3F3E0", "#F1F3F2"];
-
-    strokecolor = colorrange[0];
-
-var format = d3.time.format("%m/%d/%y");
-
-var	margin = {top: 30, left: 20, bottom: 30, right: 20},
-    width = document.getElementById('chart').clientWidth- margin.left - margin.right,
-	height = 400 - margin.top - margin.bottom;
-    console.log(width);
-//var margin = {top: 20, right: 40, bottom: 30, left: 30};
-//var width = document.body.clientWidth - margin.left - margin.right;
-//var height = 400 - margin.top - margin.bottom;
-
-var tooltip = d3.select("#chart")
-    .append("div")
-    .attr("class", "remove")
-    .style("position", "absolute")
-    .style("z-index", "20")
-    .style("visibility", "hidden")
-    .style("top", "30px")
-    .style("left", "55px");
-
-var x = d3.time.scale()
-    .range([margin.left, width]);
-
-var y = d3.scale.linear()
-    .range([height-10, 0]);
-
-var z = d3.scale.ordinal()
-    .range(colorrange);
-
-var xAxis = d3.svg.axis()
-    .scale(x)
-    .orient("bottom")
-    .ticks(d3.time.weeks);
-
-var yAxis = d3.svg.axis()
-    .scale(y);
-
-//var yAxisr = d3.svg.axis()
-//    .scale(y);
-
-var stack = d3.layout.stack()
-    .offset("silhouette")
-    .values(function(d) { return d.values; })
-    .x(function(d) { return d.date; })
-    .y(function(d) { return d.value; });
-
-var nest = d3.nest()
-    .key(function(d) { return d.key; });
-
-var area = d3.svg.area()
-    .interpolate("cardinal")
+var line = d3.line()
     .x(function(d) { return x(d.date); })
-    .y0(function(d) { return y(d.y0); })
-    .y1(function(d) { return y(d.y0 + d.y); });
+    .y(function(d) { return y(d.count); })
+    .curve(kernelSmooth, 50, 100)
+    .context(context);
 
-var svg = d3.select("#chart").append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-    .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+context.translate(margin.left, margin.top);
 
-var graph = d3.csv(csvpath, function(data) {
+d3.requestCsv("data.csv", function(d) {
+  d.date = parseTime(d.date);
+  d.count = +d.count;
+  return d;
+}, function(error, data) {
+  if (error) throw error;
+
+  x.domain(d3.extent(data, function(d) { return d.date; })).nice(d3.utcDay);
+  y.domain([0, d3.max(data, function(d) { return d.count; })]);
+
+  context.globalAlpha = 0.5;
+  context.lineWidth = 1;
+  context.strokeStyle = "steelblue";
   data.forEach(function(d) {
-    d.date = format.parse(d.date);
-    d.value = +d.value;
+    context.save();
+    context.translate(x(d.date), y(d.count));
+    context.beginPath();
+    symbol(d);
+    context.stroke();
+    context.restore();
   });
 
-  var layers = stack(nest.entries(data));
-
-  x.domain(d3.extent(data, function(d) { return d.date; }));
-  y.domain([0, d3.max(data, function(d) { return d.y0 + d.y; })]);
-
-  svg.selectAll(".layer")
-      .data(layers)
-    .enter().append("path")
-      .attr("class", "layer")
-      .attr("d", function(d) { return area(d.values); })
-      .style("fill", function(d, i) { return z(i); });
-
-
-  svg.append("g")
-      .attr("class", "x axis")
-      .attr("transform", "translate(0," + height + ")")
-      .call(xAxis);
-
-  svg.append("g")
-      .attr("class", "y axis")
-      .call(yAxis.orient("left"));
-
-  svg.selectAll(".layer")
-    .attr("opacity", 1)
-    .on("mouseover", function(d, i) {
-      svg.selectAll(".layer").transition()
-      .duration(250)
-      .attr("opacity", function(d, j) {
-        return j != i ? 0.6 : 1;
-    })})
-
-    .on("mousemove", function(d, i) {
-        console.log("mousemove");
-
-      mousex = d3.mouse(this);
-      mousex = mousex[0];
-      var invertedx = x.invert(mousex);
-      invertedx = invertedx.getMonth() + invertedx.getDate();
-      var selected = (d.values);
-      for (var k = 0; k < selected.length; k++) {
-        datearray[k] = selected[k].date
-        datearray[k] = datearray[k].getMonth() + datearray[k].getDate();
-      }
-
-      mousedate = datearray.indexOf(invertedx);
-      pro = d.values[mousedate].value;
-
-      d3.select(this)
-      .classed("hover", true)
-      .attr("stroke", strokecolor)
-      .attr("stroke-width", "0.5px"),
-      tooltip.html( "<p>" + d.key + "<br>" + pro + "</p>" ).style("visibility", "visible");
-
-    })
-    .on("mouseout", function(d, i) {
-     svg.selectAll(".layer")
-      .transition()
-      .duration(250)
-      .attr("opacity", "1");
-      d3.select(this)
-      .classed("hover", false)
-      .attr("stroke-width", "0px"), tooltip.html( "<p>" + d.key + "<br>" + pro + "</p>" ).style("visibility", "hidden");
-    })
-
-  var vertical = d3.select("#chart")
-        .append("div")
-        .attr("class", "remove")
-        .style("position", "absolute")
-        .style("z-index", "19")
-        .style("width", "1px")
-        .style("height", "380px")
-        .style("top", "10px")
-        .style("bottom", "30px")
-        .style("left", "0px")
-        .style("background", "#fff");
-
-
-    d3.select("#chart")
-        .on("mousemove", function(){
-            mousex = d3.mouse(this);
-            mousex = mousex[0] + 5;
-            vertical.style("left", mousex + "px" )})
-        .on("mouseover", function(){
-            mousex = d3.mouse(this);
-            mousex = mousex[0] + 5;
-            vertical.style("left", mousex + "px")});
+  context.beginPath();
+  line(data);
+  context.globalAlpha = 1;
+  context.lineWidth = 2;
+  context.strokeStyle = "black";
+  context.stroke();
 });
+
+function epanechnikov(u) {
+  return (u *= u) <= 1 ? 0.75 * (1 - u) : 0;
+}
+
+function kernelSmooth(context, bandwidth, count) {
+  var linear = d3.curveLinear(context), x0 = Infinity, x1 = -x0, xv, yv;
+  return {
+    lineStart: function() {
+      xv = [], yv = [];
+    },
+    lineEnd: function() {
+      linear.lineStart();
+      for (var x = x0, dx = (x1 - x0) / count; x <= x1; x += dx) {
+        for (var j = 0, yi = 0, wi = 0, m = xv.length; j < m; ++j) {
+          var wji = epanechnikov((xv[j] - x) / bandwidth);
+          wi += wji, yi += yv[j] * wji;
+        }
+        linear.point(x, yi / wi);
+      }
+      linear.lineEnd();
+    },
+    point: function(x, y) {
+      xv.push(x = +x), yv.push(+y);
+      if (x < x0) x0 = x;
+      if (x > x1) x1 = x;
+    }
+  };
 }
