@@ -1,5 +1,5 @@
 var h = 500;
-var svg = d3.select("#chart").append("svg");
+//var svg = d3.select("#chart").append("svg");
 var margin = {top: 20, right: 20, bottom: 110, left: 40},
     margin2 = {top: 430, right: 20, bottom: 30, left: 40},
     width = document.getElementById('chart').clientWidth - margin.left - margin.right,
