@@ -1,13 +1,12 @@
-var	margin = {top: 20, right: 20, bottom: 110, left: 40},
+var h = 500;
+var svg = d3.select("#chart").append("svg");
+var margin = {top: 20, right: 20, bottom: 110, left: 40},
     margin2 = {top: 430, right: 20, bottom: 30, left: 40},
-    width = document.getElementById('chart').clientWidth- margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom,
-    height2 = 500 - margin2.top - margin2.bottom;
+    width = document.getElementById('chart').clientWidth - margin.left - margin.right,
+    height = h - margin.top - margin.bottom,
+    height2 = h - margin2.top - margin2.bottom;
 
-var svg = d3.select("#chart")
-    .append("svg")
-    .attr("width", width)
-    .attr("height", height);
+var svg = d3.select("#chart").append("svg").attr("width", document.getElementById('chart').clientWidth).attr("height", h);
 
 var parseDate = d3.timeParse("%Y-%m");
 
@@ -56,9 +55,9 @@ var context = svg.append("g")
     .attr("class", "context")
     .attr("transform", "translate(" + margin2.left + "," + margin2.top + ")");
 
-d3.csv("data/test.csv", type, function(data, error) {
+d3.csv("data/firstTimePlot.csv", type, function(error, data) {
   if (error) throw error;
-
+  console.log(data);
   x.domain(d3.extent(data, function(d) { return d.date; }));
   y.domain([0, d3.max(data, function(d) { return d.count; })]);
   x2.domain(x.domain());
