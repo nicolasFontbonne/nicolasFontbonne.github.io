@@ -103,7 +103,6 @@ d3.csv("data/firstTimePlot.csv", type, function(error, data) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
       .call(zoom);
 });
-}
 function brushed() {
   if (d3.event.sourceEvent && d3.event.sourceEvent.type === "zoom") return; // ignore brush-by-zoom
   var s = d3.event.selection || x2.range();
@@ -128,4 +127,6 @@ function type(d) {
   d.date = parseDate(d.date);
   d.count = +d.count;
   return d;
+}
+
 }
