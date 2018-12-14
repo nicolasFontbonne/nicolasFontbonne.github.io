@@ -1,12 +1,12 @@
 var h = 500;
-//var svg = d3.select("#chart").append("svg");
+//var svg = d3.select("#firstTimePlot").append("svg");
 var margin = {top: 20, right: 20, bottom: 110, left: 40},
     margin2 = {top: 430, right: 20, bottom: 30, left: 40},
-    width = document.getElementById('chart').clientWidth - margin.left - margin.right,
+    width = document.getElementById('firstTimePlot').clientWidth - margin.left - margin.right,
     height = h - margin.top - margin.bottom,
     height2 = h - margin2.top - margin2.bottom;
 
-var svg = d3.select("#chart").append("svg").attr("width", document.getElementById('chart').clientWidth).attr("height", h);
+var svg = d3.select("#firstTimePlot").append("svg").attr("width", document.getElementById('firstTimePlot').clientWidth).attr("height", h);
 
 var parseDate = d3.timeParse("%Y-%m");
 
