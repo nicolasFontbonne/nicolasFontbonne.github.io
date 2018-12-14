@@ -3,14 +3,14 @@ RepDemPlot();
 function RepDemPlot() {
 
 var h = 500;
-//var svg = d3.select("#firstTimePlot").append("svg");
+//var svg = d3.select("#RepDemPlot").append("svg");
 var margin = {top: 20, right: 20, bottom: 110, left: 40},
     margin2 = {top: 430, right: 20, bottom: 30, left: 40},
-    width = document.getElementById('firstTimePlot').clientWidth - margin.left - margin.right,
+    width = document.getElementById('RepDemPlot').clientWidth - margin.left - margin.right,
     height = h - margin.top - margin.bottom,
     height2 = h - margin2.top - margin2.bottom;
 
-var svg = d3.select("#firstTimePlot").append("svg").attr("width", document.getElementById('firstTimePlot').clientWidth).attr("height", h);
+var svg = d3.select("#RepDemPlot").append("svg").attr("width", document.getElementById('RepDemPlot').clientWidth).attr("height", h);
 
 var parseDate = d3.timeParse("%Y-%m");
 
@@ -59,7 +59,7 @@ var context = svg.append("g")
     .attr("class", "context")
     .attr("transform", "translate(" + margin2.left + "," + margin2.top + ")");
 
-d3.csv("data/firstTimePlot.csv", type, function(error, data) {
+d3.csv("data/RepDemPlot.csv", type, function(error, data) {
   if (error) throw error;
   console.log(data);
   x.domain(d3.extent(data, function(d) { return d.date; }));
