@@ -11,13 +11,13 @@ var svg = d3.select("#mostPopularSubject").append("svg").attr("width", document.
 
 
 // set x scale
-var x = d3.scaleBand()
+var x_MPS = d3.scaleBand()
     .rangeRound([0, width])
     .paddingInner(0.05)
     .align(0.1);
 
 // set y scale
-var y = d3.scaleLinear()
+var y_MPS = d3.scaleLinear()
     .rangeRound([height, 0]);
 
 // set the colors
@@ -36,8 +36,8 @@ d3.csv("data/mostPopularSubject.csv", function(d, i, columns) {
   console.log("key : " + keys);
 
   data.sort(function(a, b) { return b.total - a.total; });
-  x.domain(data.map(function(d) { return d.Label; }));
-  y.domain([0, d3.max(data, function(d) { return d.total; })]).nice();
+  x_MPS.domain(data.map(function(d) { return d.Label; }));
+  y_MPS.domain([0, d3.max(data, function(d) { return d.total; })]).nice();
   z.domain(keys);
 
   g.append("g")
@@ -48,22 +48,22 @@ d3.csv("data/mostPopularSubject.csv", function(d, i, columns) {
     .selectAll("rect")
     .data(function(d) { return d; })
     .enter().append("rect")
-      .attr("x", function(d) { return x(d.data.Label); })
-      .attr("y", function(d) { return y(d[1]); })
-      .attr("height", function(d) { return y(d[0]) - y(d[1]); })
-      .attr("width", x.bandwidth());
+      .attr("x", function(d) { return x_MPS(d.data.Label); })
+      .attr("y", function(d) { return y_MPS(d[1]); })
+      .attr("height", function(d) { return y_MPS(d[0]) - y_MPS(d[1]); })
+      .attr("width", x_MPS.bandwidth());
 
   g.append("g")
       .attr("class", "axis")
       .attr("transform", "translate(0," + height + ")")
-      .call(d3.axisBottom(x));
+      .call(d3.axisBottom(x_MPS));
 
   g.append("g")
       .attr("class", "axis")
-      .call(d3.axisLeft(y).ticks(null, "s"))
+      .call(d3.axisLeft(y_MPS).ticks(null, "s"))
     .append("text")
       .attr("x", 2)
-      .attr("y", y(y.ticks().pop()) + 0.5)
+      .attr("y", y_MPS(y_MPS.ticks().pop()) + 0.5)
       .attr("dy", "0.32em")
       .attr("fill", "#000")
       .attr("font-weight", "bold")
