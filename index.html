@@ -27,13 +27,16 @@ Our credulity becomes credibility, it's up to us to turn the equation the other 
 <p>
 For this study we used the Liar database introduced by William Yang Wang in his article: <a href="https://arxiv.org/pdf/1705.00648.pdf">Liar, Liar Pants on Fire: A New Benchmark Dataset for Fake News Detection</a>.
 This database was originally built to automatically detect fake news using data collected by the <a href="https://www.politifact.com">Politifact.com</a> website.
-
-We have also collected thousands of up-to-date data from <a href="https://www.politifact.com">Politifact.com</a>.
-This huge data collection allows us to understand a little bit mutch the world of the lie.
 </p>
 <p>
+Following the exemple of this dataset, we have also collected thousands of up-to-date data from <a href="https://www.politifact.com">Politifact.com</a>.
+This huge data collection allows us to understand a little bit mutch the world of the lie.
+</p>
+
+<p>
 Each line corresponds to a unique quote whose veracity has been assessed and identified by a Politifact contributor.
-A lot of information can be accessed in addition to the quotation itself, such as the speaker's political affiliation, geographical origin, history in the database and more.
+A lot of information can be accessed in addition to the quotation itself, such as the speaker's political affiliation, geographical origin, history in the database, a subject, ect...
+
 The database therefore contains a large part of text elements of varying sizes.
  For example :
 </p>
@@ -63,11 +66,10 @@ The database therefore contains a large part of text elements of varying sizes.
   </ul>
 </div>
 </div>
-Each data are also labelised by a subject (Health care, climate change, etc...)
 <p>
-The scale of the original database has no precedent! 12.8k articles were analysed and labelled.
-And if we add the data that we collected from <a href="https://www.politifact.com">Politifact.com</a>, this number adds up to 30k !
-It will therefore be possible to study in depth the worrying phenomenon of Fakes news.
+The scale of the original database has no precedent for fake news detection!
+12.8k articles were analysed and labelledf for the Liar dataset. But if we add the data that we collected from <a href="https://www.politifact.com">Politifact.com</a>, this number adds up to 30k!
+It will therefore be possible to study in depth the worrying phenomenon of fakes news.
 The <em>truth-O-meter</em> can take six possibles values depending on the degree of truth empiricaly evaluated by a Politifact contributor.
 </p>
 
@@ -86,13 +88,13 @@ The <em>truth-O-meter</em> can take six possibles values depending on the degree
     In particular, many precautions must be taken to conclude anything general from these data.
     Several sources of bias can be observed here.
 
-    The sampling was carried out to provide a generally uniform distribution on the degree of truth.This may or may not be representative of the truth.
-    Also, since the data are extracted from the politifac.com website, sampling can also be subject to user selection bias responsible for verifying facts.
+    Since the data are extracted from the politifac.com website, sampling can also be subject to a selection bias from the users responsible for verifying facts.
 </div>
 
 <h3>Our study</h3>
 
-Even conditionned by this database, we can still study this dangerous phenomenon known as Fake news
+Even conditionned by this database, we can still study the phenomenon of fake news.
+This study will be conducted in three parts :
 
 
 <hr>
