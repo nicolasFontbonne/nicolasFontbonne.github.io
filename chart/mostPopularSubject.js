@@ -1,4 +1,5 @@
 // create the svg
+$.noConflict();
 //<div class="col-lg-10 col-md-10" id="chart"></div>
 var h = 300;
 var margin = {top: 20, right: 20, bottom: 30, left: 40},

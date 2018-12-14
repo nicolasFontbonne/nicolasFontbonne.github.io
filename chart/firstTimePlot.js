@@ -1,3 +1,4 @@
+$.noConflict();
 var h = 500;
 //var svg = d3.select("#firstTimePlot").append("svg");
 var margin = {top: 20, right: 20, bottom: 110, left: 40},
