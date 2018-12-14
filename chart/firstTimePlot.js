@@ -30,13 +30,13 @@ var zoom = d3.zoom()
     .on("zoom", zoomed);
 
 var area = d3.area()
-    .curve(d3.curveMonotoneX)
+    .curve(d3.curveStep)
     .x(function(d) { return x(d.date); })
     .y0(height)
     .y1(function(d) { return y(d.count); });
 
 var area2 = d3.area()
-    .curve(d3.curveMonotoneX)
+    .curve(d3.curveStep)
     .x(function(d) { return x2(d.date); })
     .y0(height2)
     .y1(function(d) { return y2(d.count); });
