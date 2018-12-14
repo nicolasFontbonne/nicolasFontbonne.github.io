@@ -1,4 +1,4 @@
-firstTimePlot()
+firstTimePlot();
 
 function firstTimePlot() {
 
