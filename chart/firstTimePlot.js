@@ -1,4 +1,5 @@
-function firstTimePlot()
+firstTimePlot()
+
 function firstTimePlot() {
 
 var h = 500;
