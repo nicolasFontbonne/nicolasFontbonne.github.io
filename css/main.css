@@ -807,7 +807,7 @@ height: 100%;
 .area {
     stroke:{{ site.hover-col  }};
     fill: {{ site.hover-col }};
-    fill-opacity:0.5;
+    fill-opacity:0.9;
     clip-path: url(#clip);
 }
 
