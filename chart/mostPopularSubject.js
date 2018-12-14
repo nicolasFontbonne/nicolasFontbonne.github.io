@@ -23,7 +23,7 @@ var y_MPS = d3.scaleLinear()
     .rangeRound([height, 0]);
 
 // set the colors
-var z = d3.scaleOrdinal().range(["#CB1649", "#1DB1F1"]);
+var z = d3.scaleOrdinal().range(["#FEF035", "#F1F3F2"]);
 
 // load the csv and create the chart
 d3.csv("data/mostPopularSubject.csv", function(d, i, columns) {
