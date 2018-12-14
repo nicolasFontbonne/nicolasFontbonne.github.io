@@ -805,7 +805,7 @@ height: 100%;
 }
 
 .area {
-    stroke:{{ navbar-text-col }};
+    stroke:{{ site.navbar-text-col }};
     fill: {{ site.hover-col }};
     fill-opacity:0.1;
     clip-path: url(#clip);
