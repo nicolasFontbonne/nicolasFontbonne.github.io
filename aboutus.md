@@ -4,10 +4,17 @@ title: About us
 subtitle: Who are we and Why are we doing this ?
 ---
 
-We are :
-* Jeremy Wanner
-* Konstantinos Koukas
-* Nicolas Fontbonne
+Applied Data Analysis is a course given by Professor Robert West to EPFL master's students.
+The course teaches the basic techniques and practical skills necessary to understand a variety of data, using the most renowned software tools in the world of data science such as pandas, scikit-learn, Spark, etc.
+The project you discover here is the final step in putting this semester knowledge into practice. It was realized by an atypical triptych of students, I mean, the three of us:
+* Konstantinos Koukas: computer science master's student
+* Nicolas Fontbonne: electrical engineering master's student
+* Jeremy Wanner: bio-mechanical engineering master's student
+We hope you enjoyed this work as we did creating it.
+Thank you for coming this far and be careful with what you read!
 
-
-And we are ADA student ...
+https://edu.epfl.ch/coursebook/en/applied-data-analysis-CS-401
+https://dlab.epfl.ch/people/west/
+nicolas.fontbonne@epfl.ch
+konstantinos.koukas@epfl.ch
+jeremy.wanner@epfl.ch
