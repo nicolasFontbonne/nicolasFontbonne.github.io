@@ -1,4 +1,6 @@
-$.noConflict();
+function firstTimePlot()
+function firstTimePlot() {
+
 var h = 500;
 //var svg = d3.select("#firstTimePlot").append("svg");
 var margin = {top: 20, right: 20, bottom: 110, left: 40},
@@ -100,7 +102,7 @@ d3.csv("data/firstTimePlot.csv", type, function(error, data) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
       .call(zoom);
 });
-
+}
 function brushed() {
   if (d3.event.sourceEvent && d3.event.sourceEvent.type === "zoom") return; // ignore brush-by-zoom
   var s = d3.event.selection || x2.range();
