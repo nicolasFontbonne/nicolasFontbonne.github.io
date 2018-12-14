@@ -7502,6 +7502,9 @@ button.close {
     align-self: stretch !important;
   }
 }
+.w-100 {
+  width: 100% !important;
+}
 
 @media (min-width: 1200px) {
   .flex-xl-row {
