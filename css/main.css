@@ -805,8 +805,10 @@ height: 100%;
 }
 
 .area {
-  fill: {{ site.hover-col }};
-  clip-path: url(#clip);
+    stroke:{{ site.hover-col }};
+    fill: {{ site.hover-col }};
+    fill-opacity:0.1;
+    clip-path: url(#clip);
 }
 
 .zoom {
