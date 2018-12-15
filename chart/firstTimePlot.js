@@ -63,7 +63,7 @@ d3.csv("data/firstTimePlot.csv", type, function(error, data) {
   if (error) throw error;
   console.log(data);
   x.domain(d3.extent(data, function(d) { return d.date; }));
-  y.domain([0, d3.max(data, function(d) { return d.count; })]);
+  y.domain([0, 100]);
   x2.domain(x.domain());
   y2.domain(y.domain());
 
