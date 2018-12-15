@@ -37,13 +37,13 @@ var area = d3.area()
     .curve(d3.curveStep)
     .x(function(d) { return x(d.Date); })
     .y0(height)
-    .y1(function(d) { return y(d.count); });
+    .y1(function(d) { return y(d.Republican); });
 
 var area2 = d3.area()
     .curve(d3.curveStep)
     .x(function(d) { return x2(d.Date); })
     .y0(height2)
-    .y1(function(d) { return y2(d.count); });
+    .y1(function(d) { return y2(d.Republican); });
 
 svg.append("defs").append("clipPath")
     .attr("id", "clip")
@@ -63,7 +63,7 @@ d3.csv("data/RepDem.csv", type, function(error, data) {
   if (error) throw error;
   console.log(data);
   x.domain(d3.extent(data, function(d) { return d.Date; }));
-  y.domain([0, d3.max(data, function(d) { return d.count; })]);
+  y.domain([0, 100]);
   x2.domain(x.domain());
   y2.domain(y.domain());
 
@@ -125,7 +125,7 @@ function zoomed() {
 
 function type(d) {
   d.Date = parseDate(d.Date);
-  d.count = +d.count;
+  d.Republican = +d.Republican;
   return d;
 }
 
