@@ -69,7 +69,7 @@ d3.csv("data/RepDem.csv", type, function(error, data) {
 
   focus.append("path")
       .datum(data)
-      .attr("class", "area")
+      .attr("class", "area_rd")
       .attr("d", area);
 
   focus.append("g")
@@ -83,7 +83,7 @@ d3.csv("data/RepDem.csv", type, function(error, data) {
 
   context.append("path")
       .datum(data)
-      .attr("class", "area")
+      .attr("class", "area_rd")
       .attr("d", area2);
 
   context.append("g")
@@ -118,7 +118,7 @@ function zoomed() {
   if (d3.event.sourceEvent && d3.event.sourceEvent.type === "brush") return; // ignore zoom-by-brush
   var t = d3.event.transform;
   x.domain(t.rescaleX(x2).domain());
-  focus.select(".area").attr("d", area);
+  focus.select(".area_rd").attr("d", area);
   focus.select(".axis--x").call(xAxis);
   context.select(".brush").call(brush.move, x.range().map(t.invertX, t));
 }

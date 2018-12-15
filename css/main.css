@@ -810,41 +810,12 @@ height: 100%;
     fill-opacity:0.9;
     clip-path: url(#clip);
 }
-
+.area_rd {
+    stroke:#CB1649;
+    clip-path: url(#clip);
+}
 .zoom {
   cursor: move;
   fill: none;
   pointer-events: all;
-}
-
-
-#Trump {
-   background-image: url('../img/TRUY_worded.png');
-   height: 70px;
-   width: 120px;
-}
-
-#Trump:hover {
-   background-image: url('../img/TRUY.png');
-}
-
-
-#Clinton {
-   background-image: url('../img/CLIY_worded.png');
-   height: 70px;
-   width: 120px;
-}
-
-#Clinton:hover {
-   background-image: url('../img/CLIY.png');
-}
-
-#Obama {
-   background-image: url('../img/OBAY_worded.png');
-   height: 70px;
-   width: 120px;
-}
-
-#Obama:hover {
-   background-image: url('../img/OBAY.png');
 }
