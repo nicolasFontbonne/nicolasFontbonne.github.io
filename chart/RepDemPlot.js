@@ -126,6 +126,8 @@ function zoomed() {
 function type(d) {
   d.Date = parseDate(d.Date);
   d.Republican = +d.Republican;
+  d.Democrat = +d.Democrat;
+
   return d;
 }
 
