@@ -207,7 +207,7 @@ In the following section, we create a model that encompass the struture of the d
     </form>
     <div id="cy"></div>
     <script>
-        $('input[name="optradio"]').change();
+        $('input[name="optradio"]').trigger("change");
         $('input[name="optradio"]').on('change', function() {
             if ($(this).val() == 'all') {
                 var filename = "data/graph/all.json";
@@ -236,8 +236,7 @@ In the following section, we create a model that encompass the struture of the d
                     layout: {
                         name: 'cose-bilkent',
                         nodeDimensionsIncludeLabels: true,
-                        nodeRepulsion: 3000,
-                        idealEdgeLength: 60,
+                        nodeRepulsion: 2000,
                         edgeElasticity: 0.45,
                         nestingFactor: 0.1,
                         gravity: 0.1,
@@ -247,7 +246,7 @@ In the following section, we create a model that encompass the struture of the d
                         gravityRange: 4.0,
                         initialEnergyOnIncremental: 0.5,
                         fit: true,
-                        padding: 10
+                        padding: 30
                     }
                 });
             });
