@@ -253,7 +253,9 @@ In the following section, we create a model that encompass the struture of the d
                 });
             });
         });
-        $('input[name="optradio"]')[0].checked = true;
+        $('input[name="optradio"]')
+            .val('all')
+            .trigger('change');
     </script>
 <hr>
 
