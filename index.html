@@ -198,7 +198,15 @@ In the following section, we create a model that encompass the struture of the d
         $.getJSON("data/graph/all.json", function (data) {
             var cy = cytoscape({
                 container: document.getElementById('cy'),
-                elements: data
+                elements: data,
+                style: [
+                    {
+                        selector: "node",
+                        style: {
+                            "label": "data(id)",
+                        }
+                    }
+                ]
             });
         });
 
