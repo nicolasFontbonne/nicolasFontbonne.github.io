@@ -207,17 +207,7 @@ In the following section, we create a model that encompass the struture of the d
     </form>
     <div id="cy"></div>
     <script>
-        $('input[name="optradio"]').on('change', function() {
-            if ($(this).val() === 'health') {
-                console.log('health');
-                var filename = "data/graph/healthcare.json";
-            } else if ($(this).val() === 'economy'){
-                var filename = "data/graph/Economy.json";
-                console.log('economy');
-            } else {
-                console.log('all');
-                var filename = "data/graph/all.json";
-            }
+        function graph(filename) {
             $.getJSON(filename, function (data) {
                 var cy = cytoscape({
                     container: document.getElementById('cy'),
@@ -253,7 +243,22 @@ In the following section, we create a model that encompass the struture of the d
                     }
                 });
             });
-        }).val('all').trigger("change");
+        }
+        graph("data/graph/all.json");
+
+        $('input[name="optradio"]').on('change', function() {
+            if ($(this).val() == 'health') {
+                console.log('health');
+                var filename = "data/graph/healthcare.json";
+            } else if ($(this).val() == 'economy'){
+                var filename = "data/graph/Economy.json";
+                console.log('economy');
+            } else {
+                console.log('all');
+                var filename = "data/graph/all.json";
+            }
+            graph(filename);
+        });
 
     </script>
 <hr>
