@@ -196,52 +196,59 @@ In the following section, we create a model that encompass the struture of the d
 <h1> II. The fake war </h1>
     <form>
         <label class="radio-inline">
-            <input type="radio" name="optradio" checked>All subjects
+            <input type="radio" name="optradio" value="all" checked>All subjects
         </label>
         <label class="radio-inline">
-            <input type="radio" name="optradio">Health Care
+            <input type="radio" name="optradio" value="health">Health Care
         </label>
         <label class="radio-inline">
-            <input type="radio" name="optradio">Economy
+            <input type="radio" name="optradio" value="economy">Economy
         </label>
     </form>
     <div id="cy"></div>
     <script>
-        $.getJSON("data/graph/Economy.json", function (data) {
-            var cy = cytoscape({
-                container: document.getElementById('cy'),
-                elements: data,
-                style: [
-                    {
-                        selector: "node",
-                        style: {
-                            "label": "data(id)",
-                            "background-color": "#f1ee00",
+        $('input[name="optradio"]').on('change', function() {
+            if ($(this).val() == 'all') {
+                var filename = "data/graph/Economy.json";
+            } else if ($(this).val() == 'health') {
+                var filename = "data/graph/'Health Care'.json";
+            } else {
+                var filename = "data/graph/Economy.json";
+            }
+            $.getJSON(filename, function (data) {
+                var cy = cytoscape({
+                    container: document.getElementById('cy'),
+                    elements: data,
+                    style: [
+                        {
+                            selector: "node",
+                            style: {
+                                "label": "data(id)",
+                                "background-color": "#f1ee00",
+                            }
+                        },
+                        {
+                            selector: "edge",
+                            style: {}
                         }
-                    },
-                    {
-                        selector: "edge",
-                        style: {
-
-                        }
+                    ],
+                    layout: {
+                        name: 'cose-bilkent',
+                        nodeDimensionsIncludeLabels: true,
+                        nodeRepulsion: 3000,
+                        idealEdgeLength: 60,
+                        edgeElasticity: 0.45,
+                        nestingFactor: 0.1,
+                        gravity: 0.1,
+                        numIter: 5000,
+                        gravityRangeCompound: 1.5,
+                        gravityCompound: 1.0,
+                        gravityRange: 4.0,
+                        initialEnergyOnIncremental: 0.5,
+                        fit: true,
+                        padding: 20
                     }
-                ],
-                layout: {
-                    name: 'cose-bilkent',
-                    nodeDimensionsIncludeLabels: true,
-                    nodeRepulsion: 3000,
-                    idealEdgeLength: 60,
-                    edgeElasticity: 0.45,
-                    nestingFactor: 0.1,
-                    gravity: 0.1,
-                    numIter: 5000,
-                    gravityRangeCompound: 1.5,
-                    gravityCompound: 1.0,
-                    gravityRange: 4.0,
-                    initialEnergyOnIncremental: 0.5,
-                    fit: true,
-                    padding: 20
-                }
+                });
             });
         });
 
