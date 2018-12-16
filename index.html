@@ -207,9 +207,6 @@ In the following section, we create a model that encompass the struture of the d
     </form>
     <div id="cy"></div>
     <script>
-        $('input[name="optradio"]')
-            .val('all')
-            .trigger('change');
         $('input[name="optradio"]').on('change', function() {
             if ($(this).val() == 'health') {
                 console.log('health');
