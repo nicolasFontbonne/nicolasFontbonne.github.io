@@ -196,7 +196,7 @@ In the following section, we create a model that encompass the struture of the d
 <h1> II. The fake war </h1>
     <div id="cy"></div>
     <script>
-        $.getJSON("data/graph/all.json", function (data) {
+        $.getJSON("data/graph/economy.json", function (data) {
             var cy = cytoscape({
                 container: document.getElementById('cy'),
                 elements: data,
@@ -229,7 +229,7 @@ In the following section, we create a model that encompass the struture of the d
                     gravityRange: 4.0,
                     initialEnergyOnIncremental: 0.5,
                     fit: true,
-                    padding: 50
+                    padding: 20
                 }
             });
         });
