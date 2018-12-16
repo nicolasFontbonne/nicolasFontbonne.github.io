@@ -208,10 +208,10 @@ In the following section, we create a model that encompass the struture of the d
     <div id="cy"></div>
     <script>
         $('input[name="optradio"]').on('change', function() {
-            if ($(this).val() == 'health') {
+            if ($(this).val() === 'health') {
                 console.log('health');
                 var filename = "data/graph/healthcare.json";
-            } else if ($(this).val() == 'economy'){
+            } else if ($(this).val() === 'economy'){
                 var filename = "data/graph/Economy.json";
                 console.log('economy');
             } else {
@@ -253,8 +253,7 @@ In the following section, we create a model that encompass the struture of the d
                     }
                 });
             });
-        });
-        $('input[name="optradio"]').trigger("change");
+        }).trigger("change");
 
     </script>
 <hr>
