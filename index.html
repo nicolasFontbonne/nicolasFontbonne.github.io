@@ -5,6 +5,8 @@ subtitle: A visual exploration of the fake news phenomenon
 use-site-title: true
 ---
 <script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="js/cytoscape.min.js"></script>
+<script src="js/cola.js"></script>
 
 <div class="col-lg-8 col-md-10">
 
@@ -190,6 +192,22 @@ In the following section, we create a model that encompass the struture of the d
 </p>
 <hr>
 <h1> II. The fake war </h1>
+    <script>
+        var cy = cytoscape({
+            container: document.getElementById('cy'),
+            elements: [
+                { data: { id: 'a' } },
+                { data: { id: 'b' } },
+                {
+                    data: {
+                        id: 'ab',
+                        source: 'a',
+                        target: 'b'
+                    }
+                }]
+        });
+
+    </script>
 <hr>
 
 <h1> III. The revenge of the liar </h1>
