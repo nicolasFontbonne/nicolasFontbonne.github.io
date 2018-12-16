@@ -61,7 +61,7 @@ The database therefore contains a large part of text elements of varying sizes. 
 </div>
 <p>
 The scale of the original database has no precedent for fake news detection! 12.8k articles were analysed and labelled for the Liar dataset.
- We have also collected data from <a href="https://www.politifact.com">Politifact.com</a> in decreasing order since November 2018, to gather a dataset of more than 15k statements! It will therefore be possible to study in depth the worrying phenomenon of fakes news. The truth-O-meter can take nine possible values depending on the degree of truth empirically evaluated by a Politifact contributor.
+ We have also collected data from <a href="https://www.politifact.com">Politifact.com</a> in decreasing order since November 2018, to gather a dataset of more than 15k statements! It will therefore be possible to study in depth the worrying phenomenon of fakes news. The truth-O-meter can take six possible values depending on the degree of truth empirically evaluated by a Politifact contributor.
 
 </p>
 
@@ -69,7 +69,16 @@ The scale of the original database has no precedent for fake news detection! 12.
 <img src="img/nbArticles.svg" alt="liar dataset distribution">
 </div>
 <p>
-    TODO : Describe the 9 indicator.
+    These six labels means the following (from <a href="https://www.politifact.com/truth-o-meter/article/2018/feb/12/principles-truth-o-meter-politifacts-methodology-i/#Truth-O-Meter%20ratings">Politifact.com</a>)
+
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><strong>True –</strong> The statement is accurate and there’s nothing significant missing. </li>
+      <li class="list-group-item"><strong>Mostly True –</strong> The statement is accurate but needs clarification or additional information.</li>
+      <li class="list-group-item"><strong>Half True –</strong> The statement is partially accurate but leaves out important details or takes things out of context.</li>
+      <li class="list-group-item"><strong>Barely True or Mostly False -</strong> The statement contains an element of truth but ignores critical facts that would give a different impression.</li>
+      <li class="list-group-item"><strong>False -</strong> The statement is not accurate.</li>
+      <li class="list-group-item"><strong>Pants on Fire -</strong> The statement is not accurate and makes a ridiculous claim.</li>
+    </ul>
 </p>
 
 
