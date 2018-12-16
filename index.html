@@ -217,7 +217,17 @@ In the following section, we create a model that encompass the struture of the d
                 ],
                 layout: {
                     name: 'cose-bilkent',
-                    nodeDimensionsIncludeLabels: true
+                    nodeDimensionsIncludeLabels: true,
+                    nodeRepulsion: 5000,
+                    idealEdgeLength: 60,
+                    edgeElasticity: 0.45,
+                    nestingFactor: 0.1,
+                    gravity: 0.1,
+                    numIter: 5000,
+                    gravityRangeCompound: 1.5,
+                    gravityCompound: 1.0,
+                    gravityRange: 4.0,
+                    initialEnergyOnIncremental: 0.5
                 }
             });
         });
