@@ -207,11 +207,12 @@ In the following section, we create a model that encompass the struture of the d
     </form>
     <div id="cy"></div>
     <script>
+        $('input[name="optradio"]').change();
         $('input[name="optradio"]').on('change', function() {
             if ($(this).val() == 'all') {
                 var filename = "data/graph/all.json";
             } else if ($(this).val() == 'health') {
-                var filename = "data/graph/healthcare.json'";
+                var filename = "data/graph/healthcare.json";
             } else {
                 var filename = "data/graph/Economy.json";
             }
