@@ -828,9 +828,8 @@ height: 100%;
 }
 
 #cy{
-
-    border: 1px solid #444745;
+    border: 1px solid #F1F3F2;
     border-radius: 5px;
     width: 100%;
-    height: 400px;
+    height: 600px;
 }
