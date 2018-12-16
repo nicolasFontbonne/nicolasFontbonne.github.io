@@ -826,3 +826,8 @@ height: 100%;
     stroke:#4ED4FE;
     fill-opacity:0;
 }
+
+#cy{
+  width: 400px
+  height: 400px;
+}
