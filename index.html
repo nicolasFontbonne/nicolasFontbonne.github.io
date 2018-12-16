@@ -7,6 +7,7 @@ use-site-title: true
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="/js/cytoscape.min.js"></script>
 <script src="/js/cytoscape-cola.js"></script>
+<script src="/js/jquery-1.11.2.min.js"></script>
 
 <div class="col-lg-8 col-md-10">
 
@@ -194,18 +195,11 @@ In the following section, we create a model that encompass the struture of the d
 <h1> II. The fake war </h1>
     <div id="cy"></div>
     <script>
-        var cy = cytoscape({
-            container: document.getElementById('cy'),
-            elements: [
-                { data: { id: 'a' } },
-                { data: { id: 'b' } },
-                {
-                    data: {
-                        id: 'ab',
-                        source: 'a',
-                        target: 'b'
-                    }
-                }]
+        $.getJSON("data/graph/all.json", function (data) {
+            var cy = cytoscape({
+                container: document.getElementById('cy'),
+                elements: data
+            });
         });
 
     </script>
