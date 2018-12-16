@@ -209,7 +209,7 @@ In the following section, we create a model that encompass the structure of the 
             <input type="radio" name="optradio" value="economy">Economy
         </label>
     </form>
-    <div id="cy"></div>
+    <div class="w-100 d-none d-md-block" id="cy"></div>
     <script>
         function graph(filename) {
             $.getJSON(filename, function (data) {
@@ -221,7 +221,7 @@ In the following section, we create a model that encompass the structure of the 
                             selector: "node",
                             style: {
                                 "label": "data(id)",
-                                "background-color": "#f1ee00",
+                                "background-color": "#FEF035",
                                 "width": 50,
                                 "height": 50,
                                 "font-size": 50,
