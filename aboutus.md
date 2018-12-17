@@ -10,11 +10,18 @@ The project you discover here is the final step in putting this semester knowled
 * Konstantinos Koukas: computer science master's student
 * Nicolas Fontbonne: electrical engineering master's student
 * Jeremy Wanner: bio-mechanical engineering master's student
+
+
 We hope you enjoyed this work as we did creating it.
+
+
 Thank you for coming this far and be careful with what you read!
 
-https://edu.epfl.ch/coursebook/en/applied-data-analysis-CS-401
-https://dlab.epfl.ch/people/west/
-nicolas.fontbonne@epfl.ch
-konstantinos.koukas@epfl.ch
-jeremy.wanner@epfl.ch
+[<img src="img/EPFL-Logo-55mm-RVB.svg">](https://edu.epfl.ch/coursebook/en/applied-data-analysis-CS-401)
+[<img src="img/dlab.svg">](https://dlab.epfl.ch/people/west/)
+
+## Contact
+
+[Nicolas Fontbonne](nicolas.fontbonne@epfl.ch)
+[Konstantinos Koukas](konstantinos.koukas@epfl.ch)
+[Jeremy Wanner](jeremy.wanner@epfl.ch)
