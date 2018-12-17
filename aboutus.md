@@ -16,12 +16,11 @@ We hope you enjoyed this work as we did creating it.
 
 
 Thank you for coming this far and be careful with what you read!
-
-[<img src="img/EPFL-Logo-55mm-RVB.svg">](https://edu.epfl.ch/coursebook/en/applied-data-analysis-CS-401)
-[<img src="img/dlab.svg">](https://dlab.epfl.ch/people/west/)
+[![Foo](img/EPFL-Logo-55mm-RVB.svg)](https://edu.epfl.ch/coursebook/en/applied-data-analysis-CS-401)
+[![Foo](img/dlab.svg)](https://dlab.epfl.ch/people/west/)
 
 ## Contact
 
-[Nicolas Fontbonne](nicolas.fontbonne@epfl.ch)
-[Konstantinos Koukas](konstantinos.koukas@epfl.ch)
-[Jeremy Wanner](jeremy.wanner@epfl.ch)
+* [Nicolas Fontbonne](nicolas.fontbonne@epfl.ch)
+* [Konstantinos Koukas](konstantinos.koukas@epfl.ch)
+* [Jeremy Wanner](jeremy.wanner@epfl.ch)
